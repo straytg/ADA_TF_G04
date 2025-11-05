@@ -1,0 +1,3 @@
+C:/Users/sebas/OneDrive/Escritorio/ADAClinic/ClinicaSimulacion/cmake-build-debug/CMakeFiles/ClinicaSimulacion.dir
+C:/Users/sebas/OneDrive/Escritorio/ADAClinic/ClinicaSimulacion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/sebas/OneDrive/Escritorio/ADAClinic/ClinicaSimulacion/cmake-build-debug/CMakeFiles/rebuild_cache.dir
