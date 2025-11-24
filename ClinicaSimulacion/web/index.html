@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Gestión - Clínica Ricardo Palma</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Sistema de Gestión - Clínica Ricardo Palma</h1>
+    <p>Versión Web (C++)</p>
+  </header>
+
+  <nav class="menu">
+    <button onclick="mostrarSeccion('registrar')">1. Registrar nuevo paciente</button>
+    <button onclick="mostrarSeccion('buscar')">2. Buscar paciente por ID</button>
+    <button onclick="mostrarSeccion('cita')">3. Programar cita</button>
+    <button onclick="mostrarSeccion('carga')">4. Ver carga actual de médicos</button>
+  </nav>
+
+  <main>
+    <!-- SECCIÓN: REGISTRAR -->
+    <section id="seccion-registrar" class="card seccion activa">
+      <h2>Registrar nuevo paciente</h2>
+      <form id="formRegistrar">
+        <input type="number" name="idPaciente" placeholder="ID del paciente" required>
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="text" name="historial" placeholder="Historial médico" required>
+        <button type="submit">Registrar</button>
+      </form>
+      <pre id="respuestaRegistrar" class="respuesta"></pre>
+    </section>
+
+    <!-- SECCIÓN: BUSCAR -->
+    <section id="seccion-buscar" class="card seccion">
+      <h2>Buscar paciente por ID</h2>
+      <form id="formBuscar">
+        <input type="number" name="idPaciente" placeholder="ID del paciente" required>
+        <button type="submit">Buscar</button>
+      </form>
+      <pre id="respuestaBuscar" class="respuesta"></pre>
+    </section>
+
+    <!-- SECCIÓN: PROGRAMAR CITA -->
+    <section id="seccion-cita" class="card seccion">
+      <h2>Programar Cita (Asignación óptima)</h2>
+      <form id="formCita">
+        <input type="number" name="idPaciente" placeholder="ID del paciente" required>
+        <input type="text" name="especialidad" placeholder="Especialidad (Cardiologia, Cirugia...)" required>
+        <input type="text" name="fechaHora" placeholder="Fecha y hora (2025-11-05 10:00)" required>
+        <button type="submit">Programar cita</button>
+      </form>
+      <pre id="respuestaCita" class="respuesta"></pre>
+    </section>
+
+    <!-- SECCIÓN: CARGA MÉDICOS -->
+    <section id="seccion-carga" class="card seccion">
+      <h2>Carga actual de médicos</h2>
+      <button onclick="cargarMedicos()">Actualizar</button>
+      <pre id="respuestaCarga" class="respuesta"></pre>
+    </section>
+  </main>
+
+  <script>
+    // ===== CAMBIO DE SECCIONES (MENÚ) =====
+    function mostrarSeccion(nombre) {
+      document.querySelectorAll(".seccion").forEach(sec => sec.classList.remove("activa"));
+      document.getElementById("seccion-" + nombre).classList.add("activa");
+    }
+
+    // ===== REGISTRAR PACIENTE =====
+    const formRegistrar = document.getElementById("formRegistrar");
+    const respuestaRegistrar = document.getElementById("respuestaRegistrar");
+
+    formRegistrar.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new URLSearchParams(new FormData(formRegistrar));
+
+      const res = await fetch("/api/registrar", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString()
+      });
+
+      const texto = await res.text();
+      respuestaRegistrar.textContent = texto;
+    });
+
+    // ===== BUSCAR PACIENTE =====
+    const formBuscar = document.getElementById("formBuscar");
+    const respuestaBuscar = document.getElementById("respuestaBuscar");
+
+    formBuscar.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(formBuscar);
+      const idPaciente = formData.get("idPaciente");
+
+      const res = await fetch(`/api/buscar?idPaciente=${encodeURIComponent(idPaciente)}`);
+      const texto = await res.text();
+      respuestaBuscar.textContent = texto;
+    });
+
+    // ===== PROGRAMAR CITA =====
+    const formCita = document.getElementById("formCita");
+    const respuestaCita = document.getElementById("respuestaCita");
+
+    formCita.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const data = new URLSearchParams(new FormData(formCita));
+
+      const res = await fetch("/api/programar_cita", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: data.toString()
+      });
+
+      const texto = await res.text();
+      respuestaCita.textContent = texto;
+    });
+
+    // ===== CARGA DE MÉDICOS =====
+    const respuestaCarga = document.getElementById("respuestaCarga");
+
+    async function cargarMedicos() {
+      const res = await fetch("/api/carga_medicos");
+      const texto = await res.text();
+      respuestaCarga.textContent = texto;
+    }
+  </script>
+</body>
+</html>

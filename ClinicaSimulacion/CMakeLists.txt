@@ -1,21 +1,24 @@
-cmake_minimum_required(VERSION 3.21)
+cmake_minimum_required(VERSION 3.10)
 
-# 1. Definir el proyecto
 project(ClinicaSimulacion)
 
-# 2. Establecer el estándar de C++
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 3. Encontrar todos nuestros archivos .cpp
-file(GLOB_RECURSE SOURCES "src/*.cpp")
+# Incluir tus headers
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
-# 4. CREAR EL OBJETIVO (El ejecutable)
-# Ahora el objetivo "ClinicaSimulacion" existe
-add_executable(${PROJECT_NAME} ${SOURCES})
+# === Ejecutable de CONSOLA ===
+add_executable(ClinicaSimulacion
+    src/main.cpp
+    src/implementations/AsignadorBalanceado.cpp
+    src/implementations/RegistroEficiente.cpp
+    src/implementations/SchedulerOptimizado.cpp
+)
 
-# 5. MODIFICAR EL OBJETIVO (Agregar los directorios .h)
-# Como el objetivo ya existe, este comando SÍ funcionará
-target_include_directories(${PROJECT_NAME} PUBLIC
-        ${PROJECT_SOURCE_DIR}/include
+# === Ejecutable WEB ===
+add_executable(ClinicaWeb
+    src/server.cpp
+    src/implementations/AsignadorBalanceado.cpp
+    src/implementations/RegistroEficiente.cpp
+    src/implementations/SchedulerOptimizado.cpp
 )

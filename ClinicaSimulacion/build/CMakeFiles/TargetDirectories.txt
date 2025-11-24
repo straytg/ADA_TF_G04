@@ -1,0 +1,4 @@
+/home/avril/ADA_TF_G04/ClinicaSimulacion/build/CMakeFiles/ClinicaSimulacion.dir
+/home/avril/ADA_TF_G04/ClinicaSimulacion/build/CMakeFiles/ClinicaWeb.dir
+/home/avril/ADA_TF_G04/ClinicaSimulacion/build/CMakeFiles/edit_cache.dir
+/home/avril/ADA_TF_G04/ClinicaSimulacion/build/CMakeFiles/rebuild_cache.dir
