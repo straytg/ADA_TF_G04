@@ -1,7 +1,7 @@
 #include "implementations/AsignadorBalanceado.h"
 #include <limits> // Necesario para numeric_limits
 
-using namespace std; // <-- AÑADIDO
+using namespace std;
 
 optional<Medico> AsignadorBalanceado::asignarMedico(
     const vector<Medico>& medicosDisponibles,

@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "C:/Users/sebas/OneDrive/Escritorio/ADATF/ADA_TF_G04/ClinicaSimulacion"
 }

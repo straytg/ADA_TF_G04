@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/ClinicaWeb.dir/src/server.cpp.o CMakeFiles/ClinicaWeb.dir/src/implementations/AsignadorBalanceado.cpp.o CMakeFiles/ClinicaWeb.dir/src/implementations/RegistroEficiente.cpp.o CMakeFiles/ClinicaWeb.dir/src/implementations/SchedulerOptimizado.cpp.o -o ClinicaWeb 

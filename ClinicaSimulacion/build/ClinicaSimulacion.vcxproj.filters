@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\src\implementations\AsignadorBalanceado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\src\implementations\RegistroEficiente.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\src\implementations\SchedulerOptimizado.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{13B52CD4-BC3D-3983-8D2B-FDE076139B61}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

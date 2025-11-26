@@ -1,6 +1,6 @@
 #include "implementations/SchedulerOptimizado.h"
 
-using namespace std; // <-- AÑADIDO
+using namespace std;
 
 bool SchedulerOptimizado::programarCita(const Cita& nuevaCita) {
     auto& horariosOcupados = citasPorMedico[nuevaCita.idMedico];

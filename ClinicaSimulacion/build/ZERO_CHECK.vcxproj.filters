@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sebas\OneDrive\Escritorio\ADATF\ADA_TF_G04\ClinicaSimulacion\build\CMakeFiles\94d04ea4f539c53bf92d3a02cf15ddfa\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CD904CD5-5231-31E1-8AE9-0ED3FC8A114C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

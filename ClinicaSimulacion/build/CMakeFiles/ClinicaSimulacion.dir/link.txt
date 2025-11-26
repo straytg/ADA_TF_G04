@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/ClinicaSimulacion.dir/src/main.cpp.o CMakeFiles/ClinicaSimulacion.dir/src/implementations/AsignadorBalanceado.cpp.o CMakeFiles/ClinicaSimulacion.dir/src/implementations/RegistroEficiente.cpp.o CMakeFiles/ClinicaSimulacion.dir/src/implementations/SchedulerOptimizado.cpp.o -o ClinicaSimulacion 
